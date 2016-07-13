@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ich habe den Titel jetzt editiert</title>
+	<title>Kanban Board</title>
 	<link rel="stylesheet" href="src/kanbanBoard.css">
 
 	<script src="../lib/jquery-1.12.2.min.js"></script>
@@ -28,7 +28,12 @@
 						format:"json"    }
 			)
 					.done(function (data) {
-						console.log(data);
+						    $.each( data.items, function( i, item ) {
+							$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+							if ( i === 3 ) {
+							  return false;
+							}
+						
 					})
 					.fail(function () {
 						console.log("error");
@@ -47,7 +52,7 @@
 </head>
 
 <body>
-
+<div id="images"></div>
 <!--<button id="bt_board_loeschen">Board loeschen</button>-->
 <br><br>
 
