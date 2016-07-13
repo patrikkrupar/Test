@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kanban Board</title>
+	<link rel="stylesheet" href="src/kanbanBoard.css">
+
+	<script src="../lib/jquery-1.12.2.min.js"></script>
+	<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+	<!--<script src="src/Konfiguration.js"></script>-->
+	<!--<script src="src/Utils.js"></script>-->
+	<!--<script src="src/Zettel.js"></script>-->
+	<!--<script src="src/Controls.js"></script>-->
+	<!--<script src="src/KanbanBoard.js"></script>-->
+	<!--<script src='https://raw.github.com/furf/jquery-ui-touch-punch/master/jquery.ui.touch-punch.js'></script>-->
+
+	<script>
+//		var kanban = new Kanban();
+//		var controls = new Controls();
+//		kanban.init();
+
+
+		$(function() {
+			console.log("dsa");
+			var jqxhr = $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+					{
+						tags:"mount rainier",
+						tagmode:"any",
+						format:"json"    }
+			)
+					.done(function (data) {
+						console.log(data);
+					})
+					.fail(function () {
+						console.log("error");
+					})
+					.always(function () {
+						console.log("complete");
+					});
+
+			jqxhr.complete(function () {
+				console.log("second complete");
+			});
+		});
+
+
+	</script>
+</head>
+
+<body>
+
+<!--<button id="bt_board_loeschen">Board loeschen</button>-->
+<br><br>
+
+
+</body>
+
+</html>
